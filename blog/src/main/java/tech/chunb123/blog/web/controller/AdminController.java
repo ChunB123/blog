@@ -39,8 +39,11 @@ public class AdminController {
     public CommonVO login(Admin admin){
         if(adminService.verify(admin)){
             return CommonVOUtil.success();
-        }else {
-            return CommonVOUtil.error("密码错误");
         }
+        //回写cookie到浏览器
+
+
+        return CommonVOUtil.error("密码错误");
+
     }
 }
