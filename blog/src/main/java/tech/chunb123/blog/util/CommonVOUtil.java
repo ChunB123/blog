@@ -1,6 +1,7 @@
 package tech.chunb123.blog.util;
 
-import com.anbang.qipai.admin.web.vo.CommonVO;
+
+import tech.chunb123.blog.web.vo.CommonVO;
 
 /**
  * CommonVO的工具类
@@ -8,7 +9,13 @@ import com.anbang.qipai.admin.web.vo.CommonVO;
  * @date 2018/11/19
  */
 public class CommonVOUtil {
-    public static CommonVO success(Object data,String msg) {
+    public static CommonVO success() {
+        CommonVO commonVO = new CommonVO();
+        commonVO.setSuccess(true);
+        return commonVO;
+    }
+
+    public static CommonVO success(Object data, String msg) {
         CommonVO commonVO = new CommonVO();
         commonVO.setData(data);
         commonVO.setMsg(msg);
@@ -26,6 +33,13 @@ public class CommonVOUtil {
     public static CommonVO success(Boolean success,String msg) {
         CommonVO commonVO = new CommonVO();
         commonVO.setSuccess(success);
+        commonVO.setMsg(msg);
+        return commonVO;
+    }
+
+    public static CommonVO success(String msg) {
+        CommonVO commonVO = new CommonVO();
+        commonVO.setSuccess(true);
         commonVO.setMsg(msg);
         return commonVO;
     }
